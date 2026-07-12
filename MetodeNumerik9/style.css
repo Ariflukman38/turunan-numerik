@@ -1,0 +1,911 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#edf7f6;
+    color:#333;
+    overflow:hidden;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:230px;
+    background:white;
+    padding:20px 15px;
+    box-shadow:0 0 12px rgba(0,0,0,0.06);
+    z-index:10;
+}
+
+.logo h2{
+    color:#006d6f;
+    font-size:21px;
+    line-height:1.4;
+}
+
+.logo p{
+    color:gray;
+    margin-top:5px;
+    font-size:12px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:25px;
+}
+
+.sidebar ul li{
+    padding:11px 12px;
+    margin-bottom:8px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:13px;
+    transition:0.3s;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover{
+    background:#d9f3f2;
+    color:#006d6f;
+    font-weight:bold;
+}
+
+
+/* =========================
+   TEAM INFO
+========================= */
+
+.team-info{
+    position:fixed;
+    left:15px;
+    bottom:20px;
+    font-size:11px;
+    color:#666;
+    line-height:1.6;
+    z-index:999;
+}
+
+.team-info strong{
+    color:#006d6f;
+}
+
+.campus{
+    margin-top:4px;
+    font-weight:bold;
+    color:#006d6f;
+    font-size:9px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    flex:1;
+    padding:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    overflow:hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    grid-column:1 / 3;
+    background:linear-gradient(135deg,#006d6f,#009c9f);
+    color:white;
+    padding:22px;
+    border-radius:22px;
+    box-shadow:0 6px 18px rgba(0,109,111,0.18);
+}
+
+.hero h1{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    width:85%;
+    line-height:1.7;
+    font-size:13px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.calculator-card,
+.result-card{
+    background:white;
+    border-radius:22px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.05);
+}
+
+.calculator-card{
+    padding:18px;
+    overflow:auto;
+}
+
+.result-card{
+    padding:18px;
+    overflow:auto;
+    max-height:calc(100vh - 170px);
+}
+
+.calculator-card h2,
+.result-card h2{
+    color:#006d6f;
+    margin-bottom:16px;
+    font-size:21px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:13px;
+    font-weight:bold;
+    color:#333;
+}
+
+.form-group input,
+.form-group textarea,
+.formula-select{
+    width:100%;
+    padding:11px 12px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    font-size:13px;
+    transition:0.3s;
+    background:white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.formula-select:focus{
+    border-color:#009c9f;
+    outline:none;
+    box-shadow:0 0 0 3px rgba(0,156,159,0.12);
+}
+
+.formula-select{
+    cursor:pointer;
+}
+
+/* =========================
+   BARIS TARGET
+========================= */
+
+.target-row{
+
+    background:
+    rgba(
+        0,
+        109,
+        111,
+        0.12
+    );
+
+    font-weight:700;
+
+}
+
+.target-row td{
+
+    color:#006d6f;
+
+}
+
+/* =========================
+   PRESISI & GALAT
+========================= */
+
+.precision-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.input-help{
+    display:block;
+    margin-top:6px;
+    color:#888;
+    font-size:11px;
+    line-height:1.4;
+}
+
+.precision-grid .formula-select{
+    height:44px;
+}
+.input-note{
+    display:block;
+    margin-top:5px;
+    color:#777;
+    font-size:11px;
+    line-height:1.5;
+}
+
+input[type="number"]{
+    width:100%;
+}
+/* =========================
+   BUTTON GROUP
+========================= */
+
+.mode-container,
+.approach-container{
+    display:flex;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.mode-btn,
+.approach-btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#f2f2f2;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.mode-btn:hover,
+.approach-btn:hover{
+    background:#d9f3f2;
+}
+
+.mode-btn.active,
+.approach-btn.active{
+    background:#006d6f;
+    color:white;
+}
+
+.reset-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#dc3545;
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+}
+/* =========================
+   TABLE MODE
+========================= */
+
+#tableMode{
+    display:none;
+}
+
+.table-note{
+    margin-top:8px;
+    margin-bottom:14px;
+    font-size:12px;
+    color:#666;
+    line-height:1.7;
+    background:#f7fbfb;
+    padding:12px;
+    border-left:4px solid #006d6f;
+    border-radius:10px;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.method-heading{
+    margin-top:18px;
+    margin-bottom:10px;
+    color:#006d6f;
+    font-size:15px;
+}
+
+
+/* =========================
+   TURUNAN
+========================= */
+
+.turunan-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.turunan-btn{
+    padding:11px 5px;
+    border:none;
+    border-radius:12px;
+    background:#f3f3f3;
+    cursor:pointer;
+    font-size:11px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.turunan-btn:hover{
+    background:#d9f3f2;
+}
+
+.turunan-btn.active{
+    background:#006d6f;
+    color:white;
+}
+
+
+/* =========================
+   METHOD SIDE BY SIDE
+========================= */
+
+.method-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.method{
+    position:relative;
+    border:2px solid #d8e8e6;
+    border-radius:16px;
+    padding:18px 14px;
+    background:white;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    min-height:155px;
+}
+
+.method:hover{
+    transform:translateY(-2px);
+    background:#f4fbfa;
+    border-color:#009c9f;
+}
+
+.method.active{
+    background:#eaf7f6;
+    border-color:#006d6f;
+}
+
+.method.active::after{
+    content:"✓";
+    position:absolute;
+    top:-11px;
+    right:-11px;
+
+    width:26px;
+    height:26px;
+    border-radius:50%;
+
+    background:#006d6f;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+    font-weight:bold;
+}
+
+.method-icon{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+
+    background:#e9f0ef;
+    color:#006d6f;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.method.active .method-icon{
+    background:#006d6f;
+    color:white;
+}
+
+.method-title{
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:5px;
+    color:#222;
+}
+
+.method.active .method-title{
+    color:#006d6f;
+}
+
+.method small{
+    color:gray;
+    margin-bottom:12px;
+    font-size:11px;
+}
+
+.method-formula{
+    width:100%;
+    border-top:1px solid #d8e8e6;
+    padding-top:12px;
+    margin-top:5px;
+
+    font-size:11px;
+    font-family:monospace;
+    color:#006d6f;
+    line-height:1.5;
+}
+
+
+/* =========================
+   CALCULATE BUTTON
+========================= */
+
+.calculate-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:#006d6f;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.calculate-btn:hover{
+    background:#009c9f;
+    transform:translateY(-1px);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-item{
+    background:#f7fbfb;
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid #e5eeee;
+
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+
+    min-height:60px;
+}
+.result-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:15px;
+}
+/* =========================
+   FINAL RESULT
+========================= */
+
+.final-result{
+    margin-top:10px;
+
+    background:linear-gradient(
+        135deg,
+        #d8f3f2,
+        #f1fcfc
+    );
+
+    padding:20px;
+    border-radius:16px;
+
+    border:1px solid #c9e8e7;
+
+    text-align:center;
+}
+
+.final-result h3{
+    color:#006d6f;
+    margin-bottom:5px;
+    font-size:17px;
+}
+
+.final-result p{
+    font-size:32px;
+    font-weight:bold;
+    color:#006d6f;
+    word-break:break-word;
+}
+
+
+/* =========================
+   STEPS
+========================= */
+
+.steps{
+    margin-top:12px;
+}
+
+.steps h3{
+    color:#006d6f;
+    margin-bottom:10px;
+    font-size:16px;
+}
+
+.steps pre{
+
+    margin-top:8px;
+
+    padding:10px 14px;
+
+    line-height:1.25;
+
+    font-size:13px;
+
+    white-space:pre-wrap;
+
+    border:1px solid #eee;
+
+    border-radius:12px;
+
+    background:#f8f8f8;
+
+}
+/* =========================
+   TABEL LANGKAH PENYELESAIAN
+========================= */
+
+.table-title{
+    color:#006d6f;
+    margin:15px 0 8px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    margin-bottom:18px;
+    border-radius:12px;
+    border:1px solid #dcecec;
+    background:white;
+}
+
+.hasil-table{
+    width:100%;
+    min-width:780px;
+    border-collapse:collapse;
+    background:white;
+}
+
+.hasil-table thead{
+    background:#006d6f;
+    color:white;
+}
+
+.hasil-table th{
+    padding:12px;
+    text-align:center;
+    font-size:13px;
+    border:1px solid #dcecec;
+    white-space:nowrap;
+}
+
+.hasil-table td{
+    padding:10px;
+    text-align:center;
+    font-size:12px;
+    border:1px solid #dcecec;
+    white-space:nowrap;
+}
+
+.hasil-table tbody tr:nth-child(even){
+    background:#f7fbfb;
+}
+
+.hasil-table tbody tr:hover{
+    background:#eaf7f6;
+}
+
+.summary-box{
+
+    margin-bottom:20px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.summary-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.summary-table td{
+
+    padding:8px 12px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.summary-table td:first-child{
+
+    font-weight:600;
+
+    width:180px;
+
+}
+
+.export-btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    background:#198754;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.export-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+/* =========================
+   TABEL PERBANDINGAN / NILAI SEJATI
+========================= */
+
+.compare-box{
+    margin-top:16px;
+    margin-bottom:16px;
+}
+
+.compare-title{
+    color:#006d6f;
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.compare-table{
+    width:100%;
+    min-width:520px;
+    border-collapse:collapse;
+    background:white;
+}
+
+.compare-table th{
+    background:#006d6f;
+    color:white;
+    padding:11px;
+    border:1px solid #dcecec;
+    font-size:13px;
+    text-align:center;
+}
+
+.compare-table td{
+    padding:10px;
+    border:1px solid #dcecec;
+    text-align:center;
+    font-size:12px;
+}
+
+.compare-table tbody tr:nth-child(even){
+    background:#f7fbfb;
+}
+
+.nilai-sejati-box{
+    background:#eefafa;
+    border-left:5px solid #006d6f;
+    border-radius:14px;
+    padding:14px;
+    margin:15px 0;
+    line-height:1.7;
+    font-size:13px;
+}
+
+.nilai-sejati-box h4{
+    color:#006d6f;
+    margin-bottom:8px;
+}
+
+.nilai-sejati-box code{
+    color:#006d6f;
+    font-weight:bold;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c9dddd;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f7f7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    body{
+        overflow:auto;
+    }
+
+    .container{
+        flex-direction:column;
+        height:auto;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .main-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        grid-column:auto;
+    }
+
+    .hero p{
+        width:100%;
+    }
+
+    .mode-container,
+    .approach-container{
+        flex-direction:column;
+    }
+
+    .turunan-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .method-container{
+        grid-template-columns:1fr;
+    }
+
+    .result-card{
+        max-height:none;
+    }
+
+    .team-info{
+        position:static;
+        padding:15px;
+        background:white;
+    }
+
+    .hasil-table{
+        min-width:720px;
+    }
+
+
+    .error-status{
+    margin-top:10px;
+    padding:10px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.error-ok{
+    background:#e7f8ed;
+    color:#16803c;
+    border:1px solid #b8e6c6;
+}
+
+.error-bad{
+    background:#fff0f0;
+    color:#c62828;
+    border:1px solid #f2c1c1;
+}
+}
+
+.warning-note{
+
+    margin-top:15px;
+    padding:12px 16px;
+
+    background:#fff8e6;
+
+    border-left:4px solid #f4b400;
+
+    color:#7a5a00;
+
+    border-radius:10px;
+
+    font-size:14px;
+    line-height:1.6;
+
+}
