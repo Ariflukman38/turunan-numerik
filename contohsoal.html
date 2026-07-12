@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Soal</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contohsoal.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Metode Numerik - Hampiran Selisih</h2>
+            <p>Kalkulator Metode Numerik Hampiran Selisih</p>
+        </div>
+
+        <ul>
+            <li onclick="location.href='index.html'">Beranda</li>
+            <li onclick="location.href='Kalkulator.html'">Kalkulator</li>
+            <li class="active">Contoh Soal</li>
+            <li onclick="location.href='tentang.html'">Tentang</li>
+        </ul>
+    </aside>
+
+    <div class="team-info">
+        <p><strong>Kelompok 9</strong></p>
+        <p>1. Yola Novita Wati — 2403010020</p>
+        <p>2. Arif Lukman Nul Hakim — 2403010038</p>
+        <p class="campus">UNIVERSITAS PERJUANGAN TASIKMALAYA</p>
+    </div>
+
+    <main class="contoh-container">
+
+    <div class="contoh-header">
+
+        <h1>📖 Contoh Soal & Penyelesaian</h1>
+
+        <p>
+            Halaman ini berisi teori dasar dan contoh penggunaan
+            fitur yang tersedia pada Kalkulator Metode Numerik:
+            Hampiran Selisih, Deret Taylor, dan Interpolasi Newton.
+        </p>
+
+    </div>
+
+    <!-- =====================================================
+     TEORI
+===================================================== -->
+
+<div class="info-section">
+
+    <details class="info-card">
+
+        <summary>
+
+            <div class="summary-left">
+
+                <div class="icon">Δ</div>
+
+                <div>
+
+                    <h3>Teori Hampiran Selisih</h3>
+
+                    <small>
+                        Forward, Backward dan Central Difference
+                    </small>
+
+                </div>
+
+            </div>
+
+        </summary>
+
+        <div class="content">
+
+            <div class="box">
+
+                <h4>Pengertian</h4>
+
+                <p>
+
+                    Hampiran Selisih (Finite Difference) merupakan metode numerik
+                    untuk memperkirakan nilai turunan suatu fungsi dengan
+                    menggunakan data fungsi pada titik-titik tertentu.
+                    Metode ini digunakan ketika turunan analitik sulit
+                    diperoleh atau hanya tersedia data tabel.
+
+                </p>
+
+            </div>
+
+            <div class="rumus-box">
+
+<pre><code>Selisih Maju (Forward Difference)
+
+f'(x) ≈ [f(x+h)-f(x)] / h
+
+Selisih Mundur (Backward Difference)
+
+f'(x) ≈ [f(x)-f(x-h)] / h
+
+Selisih Pusat (Central Difference)
+
+f'(x) ≈ [f(x+h)-f(x-h)] / 2h
+
+Turunan Kedua Selisih Pusat
+
+f''(x) ≈ [f(x+h)-2f(x)+f(x-h)] / h²</code></pre>
+
+            </div>
+
+        </div>
+
+    </details>
+
+    <details class="info-card">
+
+        <summary>
+
+            <div class="summary-left">
+
+                <div class="icon">∑</div>
+
+                <div>
+
+                    <h3>Teori Deret Taylor</h3>
+
+                    <small>
+                        Pendekatan fungsi menggunakan ekspansi Taylor
+                    </small>
+
+                </div>
+
+            </div>
+
+        </summary>
+
+        <div class="content">
+
+            <div class="box">
+
+                <h4>Pengertian</h4>
+
+                <p>
+
+                    Deret Taylor digunakan untuk mendekati nilai fungsi
+                    di sekitar suatu titik menggunakan informasi turunan
+                    fungsi pada titik tersebut.
+                    Semakin tinggi orde Taylor yang digunakan,
+                    maka hasil pendekatan akan semakin akurat.
+
+                </p>
+
+            </div>
+
+            <div class="rumus-box">
+
+<pre><code>
+f(x+h) = f(x) + hf'(x) + (h²/2!)f''(x) + (h³/3!)f'''(x) + (h⁴/4!)f''''(x)+...</code></pre>
+
+            </div>
+
+        </div>
+
+    </details>
+
+    <details class="info-card">
+
+        <summary>
+
+            <div class="summary-left">
+
+                <div class="icon">≈</div>
+
+                <div>
+
+                    <h3>Teori Interpolasi Newton</h3>
+
+                    <small>
+                        Newton Forward Interpolation
+                    </small>
+
+                </div>
+
+            </div>
+
+        </summary>
+
+        <div class="content">
+
+            <div class="box">
+
+                <h4>Pengertian</h4>
+
+                <p>
+
+                    Interpolasi digunakan untuk memperkirakan nilai fungsi
+                    pada titik yang tidak terdapat dalam tabel data.
+                    Metode Newton Forward memanfaatkan tabel selisih maju
+                    untuk membentuk polinom interpolasi.
+
+                </p>
+
+            </div>
+
+            <div class="rumus-box">
+
+<pre><code>
+P(x) = f₀ + sΔf₀ + [s(s-1)/2!]Δ²f₀ + [s(s-1)(s-2)/3!]Δ³f₀ + ...
+
+dengan
+
+s = (x-x₀)/h</code></pre>
+
+            </div>
+
+        </div>
+
+    </details>
+
+</div>
+
+<!-- =====================================================
+     CONTOH 1
+===================================================== -->
+
+<details class="contoh-card">
+
+    <summary>
+
+        <div class="summary-left">
+
+            <div class="icon">①</div>
+
+            <div>
+
+                <h3>Mode Fungsi - Hampiran Selisih Pusat</h3>
+
+                <small>
+                    Menghitung Turunan Pertama Menggunakan Central Difference
+                </small>
+
+            </div>
+
+        </div>
+
+    </summary>
+
+    <div class="content">
+
+        <div class="box">
+
+            <h4>Diketahui</h4>
+
+            <p>
+                Fungsi :<b>f(x)=x³+2x²−x+1</b>
+                <br><br>
+                Nilai x = <b>2</b>
+                <br>
+                Nilai h = <b>0.1</b>
+                <br>
+                Metode = <b>Central Difference</b>
+                <br>
+                Turunan yang dicari = <b>f'(x)</b>
+
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 1 - Gunakan Rumus Selisih Pusat</p>
+
+<pre><code>
+f'(x) ≈ [f(x+h)-f(x-h)] / 2h
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 2 - Hitung Nilai Fungsi</p>
+
+<pre><code>
+f(2.1) = (2.1)³ + 2(2.1)² - 2.1 + 1 = 17.081000
+
+f(1.9) = (1.9)³ + 2(1.9)² - 1.9 + 1 = 12.299000
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 3 - Substitusi ke Rumus</p>
+
+<pre><code>
+f'(2) = [17.081000 - 12.299000] / (2 × 0.1) 
+      = 4.782000 / 0.2
+      = 23.910000
+</code></pre>
+
+        </div>
+
+        <div class="hasil-box">
+
+            <span>Hasil Turunan Pertama</span>
+
+            <strong>23.910000</strong>
+
+        </div>
+
+    </div>
+
+</details>
+
+<!-- =====================================================
+     CONTOH 2
+===================================================== -->
+
+<details class="contoh-card">
+
+    <summary>
+
+        <div class="summary-left">
+
+            <div class="icon">②</div>
+
+            <div>
+
+                <h3>Mode Tabel - Turunan Kedua</h3>
+
+                <small>
+                    Menggunakan Central Difference pada Data Tabel
+                </small>
+
+            </div>
+
+        </div>
+
+    </summary>
+
+    <div class="content">
+
+        <div class="box">
+
+            <h4>Data Tabel</h4>
+
+            <table class="data-table">
+
+                <tr>
+                    <th>x</th>
+                    <th>f(x)</th>
+                </tr>
+
+                <tr><td>1.8</td><td>10.889365</td></tr>
+                <tr><td>1.9</td><td>12.703199</td></tr>
+                <tr><td>2.0</td><td>14.778112</td></tr>
+                <tr><td>2.1</td><td>17.148957</td></tr>
+                <tr><td>2.2</td><td>19.855033</td></tr>
+
+            </table>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 1 - Gunakan Rumus Turunan Kedua</p>
+
+<pre><code>
+f''(x) ≈ [f(x+h)-2f(x)+f(x-h)] / h²
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 2 - Ambil Data yang Dibutuhkan</p>
+
+<pre><code>
+f(2.1) = 17.148957
+
+f(2.0) = 14.778112
+
+f(1.9) = 12.703199
+
+h = 0.1
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 3 - Substitusi</p>
+
+<pre><code>
+f''(2.0) = [17.148957 - 2(14.778112) + 12.703199] / 0.1²
+         = 0.295932 / 0.01
+         = 29.593200
+</code></pre>
+
+        </div>
+
+        <div class="hasil-box">
+
+            <span>Hasil Turunan Kedua</span>
+
+            <strong>29.593200</strong>
+
+        </div>
+
+    </div>
+
+</details>
+
+<!-- =====================================================
+     CONTOH 3
+===================================================== -->
+
+<details class="contoh-card">
+
+    <summary>
+
+        <div class="summary-left">
+
+            <div class="icon">③</div>
+
+            <div>
+
+                <h3>Deret Taylor Orde 4</h3>
+
+                <small>
+                    Pendekatan Nilai e¹·¹ Menggunakan Taylor
+                </small>
+
+            </div>
+
+        </div>
+
+    </summary>
+
+    <div class="content">
+
+        <div class="box">
+
+            <h4>Diketahui</h4>
+
+            <p>
+
+                Fungsi :<b>f(x)=eˣ</b>
+                <br><br>
+                x = 1
+                <br>
+                h = 0.1
+                <br>
+                Orde Taylor = 4
+
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 1 - Rumus Taylor Orde 4</p>
+
+<pre><code>
+f(x+h) = f(x) + hf'(x) + (h²/2!)f''(x) + (h³/3!)f'''(x) + (h⁴/4!)f''''(x)
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 2 - Hitung Nilai Turunan</p>
+
+<pre><code>
+f(x)     = e¹ = 2.718282
+
+f'(x)    = 2.718282
+
+f''(x)   = 2.718282
+
+f'''(x)  = 2.718282
+
+f''''(x) = 2.718282
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 3 - Substitusi ke Deret Taylor</p>
+
+<pre><code>
+f(1.1) = 2.718282 + 0.1(2.718282) + 0.1²/2(2.718282) + 0.1³/6(2.718282) + 0.1⁴/24(2.718282)
+       = 3.004165
+</code></pre>
+
+        </div>
+
+        <div class="hasil-box">
+
+            <span>Hasil Taylor</span>
+
+            <strong>3.004165</strong>
+
+        </div>
+
+    </div>
+
+</details>
+
+<!-- =====================================================
+     CONTOH 4
+===================================================== -->
+
+<details class="contoh-card">
+
+    <summary>
+
+        <div class="summary-left">
+
+            <div class="icon">④</div>
+
+            <div>
+
+                <h3>Interpolasi Newton Forward</h3>
+
+                <small>
+                    Menaksir Nilai Fungsi pada x = 2.05
+                </small>
+
+            </div>
+
+        </div>
+
+    </summary>
+
+    <div class="content">
+
+        <div class="box">
+
+            <h4>Diketahui</h4>
+
+            <table class="data-table">
+
+                <tr>
+                    <th>x</th>
+                    <th>f(x)</th>
+                </tr>
+
+                <tr><td>1.8</td><td>10.889365</td></tr>
+                <tr><td>1.9</td><td>12.703199</td></tr>
+                <tr><td>2.0</td><td>14.778112</td></tr>
+                <tr><td>2.1</td><td>17.148957</td></tr>
+                <tr><td>2.2</td><td>19.855033</td></tr>
+
+            </table>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 1 - Hitung Parameter s</p>
+
+<pre><code>
+s = (x-x₀) / h = (2.05-1.8) / 0.1 = 2.5
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 2 - Rumus Newton Forward</p>
+
+<pre><code>
+P(x) = f₀ + sΔf₀ + [s(s−1)/2!]Δ²f₀ +  [s(s−1)(s−2)/3!]Δ³f₀ +...
+</code></pre>
+
+        </div>
+
+        <div class="step">
+
+            <p>Langkah 3 - Substitusi Nilai</p>
+
+<pre><code>
+P(2.05) = 10.889365 + 2.5(1.813834) +  [2.5(1.5)/2](0.261079) + ...
+        = 15.924191
+</code></pre>
+
+        </div>
+
+        <div class="hasil-box">
+
+            <span>Hasil Interpolasi</span>
+
+            <strong>15.924191</strong>
+
+        </div>
+
+    </div>
+
+</details>
+
+</div>
+
+</body>
+</html>

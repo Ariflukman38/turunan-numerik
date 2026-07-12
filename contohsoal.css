@@ -1,0 +1,775 @@
+/* CONTAINER */
+
+.contoh-container{
+    flex:1;
+    padding:20px;
+    overflow:auto;
+}
+
+
+/* HEADER */
+
+.contoh-header{
+    background:linear-gradient(135deg,#006d6f,#009c9f);
+    color:white;
+    border-radius:20px;
+    padding:22px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contoh-header h1{
+    color:white;
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.contoh-header p{
+    color:#e6ffff;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* INFO COLLAPSIBLE */
+
+.info-section{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.info-card{
+    background:#eef5f2;
+    border-radius:22px;
+    border:1px solid #dce7e2;
+    overflow:hidden;
+}
+
+.info-card summary{
+    list-style:none;
+    cursor:pointer;
+    padding:24px;
+}
+
+.info-card summary::-webkit-details-marker{
+    display:none;
+}
+
+.info-card .content{
+    padding:0 24px 24px;
+}
+
+.info-card[open]{
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.info-card .summary-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.info-card .icon{
+    width:62px;
+    height:62px;
+    min-width:62px;
+
+    border-radius:50%;
+
+    background:#dff0ea;
+    color:#006d6f;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+    font-weight:bold;
+}
+
+.info-card h3{
+    font-size:20px;
+    margin-bottom:6px;
+    color:#222;
+}
+
+.info-card small{
+    color:#777;
+    font-size:14px;
+}
+
+
+/* GUIDE */
+
+.guide-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.guide-item{
+    background:#f7fbfb;
+    padding:12px;
+    border-radius:12px;
+    border-left:4px solid #009c9f;
+}
+
+.guide-item strong{
+    color:#006d6f;
+    font-size:14px;
+}
+
+.guide-item p{
+    margin-top:5px;
+    font-size:13px;
+    line-height:1.7;
+    color:#444;
+}
+
+
+/* CARD */
+
+.contoh-card{
+    background:#eef5f2;
+    border-radius:20px;
+    margin-bottom:18px;
+    overflow:hidden;
+    border:1px solid #dce7e2;
+}
+
+
+/* SUMMARY */
+
+summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 20px;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+.summary-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+/* ICON */
+
+.icon{
+    width:45px;
+    height:45px;
+    min-width:45px;
+    border-radius:50%;
+    background:#dff0ea;
+    color:#2d7d6f;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:bold;
+}
+
+.icon.green{
+    background:#dff0ea;
+    color:#2d7d6f;
+}
+
+
+/* TITLE */
+
+.summary-left h3{
+    font-size:16px;
+    margin-bottom:3px;
+    color:#222;
+}
+
+.summary-left small{
+    color:#777;
+    font-size:12px;
+}
+
+
+/* CONTENT */
+
+.content{
+    padding:0 20px 20px;
+}
+
+
+/* BOX */
+
+.box{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.box h4{
+    margin-bottom:10px;
+    color:#777;
+    font-size:13px;
+}
+
+.box p{
+    line-height:1.7;
+    font-size:14px;
+}
+
+.box code{
+    font-size:15px;
+    color:#2d7d6f;
+    font-weight:bold;
+    line-height:1.7;
+}
+
+.note-box{
+    border-left:5px solid #006d6f;
+}
+
+.rumus-box{
+    margin-top:12px;
+    background:#f7fbfb;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid #e1ece8;
+}
+
+.rumus-box pre,
+.box pre,
+.step pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    overflow-x:auto;
+    margin:0;
+}
+
+.rumus-box code,
+.box pre code,
+.step pre code{
+    display:block;
+    font-family:"Courier New", monospace;
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* TABLE */
+
+.data-table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:10px;
+    font-size:14px;
+}
+
+.data-table th{
+    background:#dff0ea;
+    color:#006d6f;
+    padding:10px;
+    border:1px solid #d2e5de;
+}
+
+.data-table td{
+    background:#fff;
+    padding:9px;
+    text-align:center;
+    border:1px solid #e1ece8;
+}
+
+
+/* TITLE */
+
+.penyelesaian-title{
+    margin:15px 0 10px;
+    color:#777;
+    font-size:13px;
+}
+
+
+/* STEP */
+
+.step{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+.step p{
+    margin-bottom:8px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.step code{
+    white-space:pre-line;
+    line-height:1.8;
+    color:#444;
+    font-size:14px;
+}
+
+
+/* HASIL */
+
+.hasil-box{
+    margin-top:15px;
+    background:linear-gradient(135deg,#1d7d6e,#2b9c8d);
+    color:white;
+    padding:18px;
+    border-radius:14px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.hasil-box strong{
+    font-size:28px;
+    white-space:nowrap;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .contoh-container{
+        padding:10px;
+    }
+
+    .summary-left{
+        align-items:flex-start;
+    }
+
+    .info-card .summary-left{
+        align-items:flex-start;
+    }
+
+    .hasil-box{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .info-card .icon{
+        width:50px;
+        height:50px;
+        min-width:50px;
+        font-size:22px;
+    }
+
+    .info-card h3{
+        font-size:16px;
+    }
+
+    .info-card small{
+        font-size:12px;
+    }
+}
+
+/* =========================================
+   UPGRADE CONTOH SOAL 2026
+========================================= */
+
+/* HEADER */
+
+.contoh-header{
+
+    background:
+    linear-gradient(
+        135deg,
+        #006d6f,
+        #009c9f
+    );
+
+    color:white;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    margin-bottom:24px;
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.08);
+
+}
+
+.contoh-header h1{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+    color:white;
+
+}
+
+.contoh-header p{
+
+    color:#e8ffff;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
+
+/* =========================================
+   INFO CARD
+========================================= */
+
+.info-card{
+
+    transition:.3s;
+
+}
+
+.info-card:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+
+.info-card[open]{
+
+    border-color:#009c9f;
+
+}
+
+.info-card .icon{
+
+    background:
+    linear-gradient(
+        135deg,
+        #006d6f,
+        #009c9f
+    );
+
+    color:white;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,109,111,.2);
+
+}
+
+/* =========================================
+   CONTOH CARD
+========================================= */
+
+.contoh-card{
+
+    transition:.25s;
+
+}
+
+.contoh-card:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.05);
+
+}
+
+.contoh-card[open]{
+
+    border-color:#009c9f;
+
+}
+
+/* =========================================
+   RUMUS
+========================================= */
+
+.rumus-box{
+
+    background:#f9ffff;
+
+    border:
+
+    1px solid
+    #d7eeee;
+
+    border-left:
+
+    6px solid
+    #009c9f;
+
+}
+
+.rumus-box code{
+
+    color:#006d6f;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* =========================================
+   BOX INPUT
+========================================= */
+
+.box{
+
+    border:
+
+    1px solid
+    #e4ecec;
+
+    box-shadow:
+
+    0 3px 10px
+    rgba(0,0,0,.03);
+
+}
+
+.box h4{
+
+    color:#006d6f;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+.box p{
+
+    line-height:2;
+
+}
+
+/* =========================================
+   LANGKAH
+========================================= */
+
+.step{
+
+    background:white;
+
+    border:
+
+    1px solid
+    #e7eeee;
+
+    border-left:
+
+    6px solid
+    #006d6f;
+
+    box-shadow:
+
+    0 3px 10px
+    rgba(0,0,0,.03);
+
+}
+
+.step pre{
+
+    font-size:14px;
+
+    line-height:2;
+
+    color:#333;
+
+}
+
+.step code{
+
+    color:#333;
+
+}
+
+/* =========================================
+   DATA TABLE
+========================================= */
+
+.data-table{
+
+    margin-top:8px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.data-table th{
+
+    background:
+    linear-gradient(
+        135deg,
+        #006d6f,
+        #009c9f
+    );
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.data-table td{
+
+    transition:.2s;
+
+}
+
+.data-table tr:hover td{
+
+    background:#f6ffff;
+
+}
+
+/* =========================================
+   HASIL
+========================================= */
+
+.hasil-box{
+
+    margin-top:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #006d6f,
+        #009c9f
+    );
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:
+
+    0 8px 20px
+    rgba(0,109,111,.18);
+
+}
+
+.hasil-box span{
+
+    font-size:15px;
+
+    color:#dfffff;
+
+}
+
+.hasil-box strong{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* =========================================
+   ICON CONTOH
+========================================= */
+
+.contoh-card .icon{
+
+    background:
+    linear-gradient(
+        135deg,
+        #006d6f,
+        #009c9f
+    );
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.contoh-container::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.contoh-container::-webkit-scrollbar-thumb{
+
+    background:#009c9f;
+
+    border-radius:20px;
+
+}
+
+.contoh-container::-webkit-scrollbar-track{
+
+    background:#edf7f6;
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .contoh-header{
+
+        padding:20px;
+
+    }
+
+    .contoh-header h1{
+
+        font-size:24px;
+
+    }
+
+    .hasil-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .hasil-box strong{
+
+        font-size:24px;
+
+    }
+
+    .data-table{
+
+        font-size:12px;
+
+    }
+
+    .step pre{
+
+        font-size:12px;
+
+    }
+
+}
