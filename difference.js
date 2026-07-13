@@ -116,30 +116,30 @@ function forwardDifference(
        TURUNAN PERTAMA
     ===================================== */
 
-    if(d === 1){
+    if (d === 1) {
 
-        if(o === 1){
+     if (o === 1) {
+   
+       hasil = (f1v - f0v) / h;
+   
+       rumus = "f'(x)=(f1-f0)/h";
+   
+     } else if (
+       o === 2 ||
+       o === 3 ||
+       o === 4
+     ) {
+   
+       hasil =
+         (-3 * f0v + 4 * f1v - f2v) /
+         (2 * h);
+   
+       rumus =
+         "f'(x)=(-3f0+4f1-f2)/(2h)";
+   
+     }
 
-            hasil =
-            (f1v - f0v)
-            / h;
-
-            rumus =
-            "f'(x)=(f1-f0)/h";
-
-        }
-        else{
-
-            hasil =
-            (-3*f0v + 4*f1v - f2v)
-            /(2*h);
-
-            rumus =
-            "f'(x)=(-3f0+4f1-f2)/(2h)";
-
-        }
-
-    }
+}
 
     /* =====================================
        TURUNAN KEDUA
@@ -147,37 +147,30 @@ function forwardDifference(
 
     else if(d === 2){
 
-        if(o === 1){
+       if (o === 1) {
 
-            hasil =
-            (
-                f2v
-                - 2*f1v
-                + f0v
-            )
-            /(h*h);
-
-            rumus =
-            "f''(x)=(f2-2f1+f0)/h²";
-
-        }
-
-        else if(o === 2){
-
-            hasil =
-            (
-                2*f0v
-                -5*f1v
-                +4*f2v
-                -f3v
-            )
-            /(h*h);
-
-            rumus =
-            "f''(x)=(2f0-5f1+4f2-f3)/h²";
-
-        }
-
+        hasil =
+          (f2v - 2 * f1v + f0v) /
+          (h * h);
+      
+        rumus =
+          "f''(x)=(f2-2f1+f0)/h²";
+      
+      }
+      else if (
+        o === 2 ||
+        o === 3 ||
+        o === 4
+      ) {
+      
+        hasil =
+          (2 * f0v - 5 * f1v + 4 * f2v - f3v) /
+          (h * h);
+      
+        rumus =
+          "f''(x)=(2f0-5f1+4f2-f3)/h²";
+      
+      }
     }
 
     /* =====================================
@@ -186,18 +179,25 @@ function forwardDifference(
 
     else if(d === 3){
 
+      if (
+        o === 1 ||
+        o === 2 ||
+        o === 3 ||
+        o === 4
+      ) {
+      
         hasil =
-        (
-            -5*f0v
-            +18*f1v
-            -24*f2v
-            +14*f3v
-            -3*f4v
-        )
-        /(2*Math.pow(h,3));
-
+          (-5 * f0v +
+            18 * f1v -
+            24 * f2v +
+            14 * f3v -
+            3 * f4v) /
+          (2 * Math.pow(h, 3));
+      
         rumus =
-        "f'''(x)=(-5f0+18f1-24f2+14f3-3f4)/(2h³)";
+          "f'''(x)=(-5f0+18f1-24f2+14f3-3f4)/(2h³)";
+      
+      }
 
     }
 
@@ -207,18 +207,25 @@ function forwardDifference(
 
     else if(d === 4){
 
+      if (
+        o === 1 ||
+        o === 2 ||
+        o === 3 ||
+        o === 4
+      ) {
+      
         hasil =
-        (
-            3*f0v
-            -14*f1v
-            +26*f2v
-            -24*f3v
-            +11*f4v
-        )
-        /Math.pow(h,4);
-
+          (3 * f0v -
+            14 * f1v +
+            26 * f2v -
+            24 * f3v +
+            11 * f4v) /
+          Math.pow(h, 4);
+      
         rumus =
-        "f''''(x)=(3f0-14f1+26f2-24f3+11f4)/h⁴";
+          "f''''(x)=(3f0-14f1+26f2-24f3+11f4)/h⁴";
+      
+      }
 
     }
 
