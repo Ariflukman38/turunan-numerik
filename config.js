@@ -10,7 +10,7 @@ const CONFIG = {
     ========================================= */
 
     minPrecision : 5,
-    maxPrecision : 15,
+    maxPrecision : 50,
 
     defaultPrecision : 10,
 
@@ -20,7 +20,7 @@ const CONFIG = {
     ========================================= */
 
     minToleranceDigit : 5,
-    maxToleranceDigit : 15,
+    maxToleranceDigit : 50,
 
     defaultTolerance : 10,
 
