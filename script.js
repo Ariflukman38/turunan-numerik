@@ -235,6 +235,10 @@ function hitungTurunan() {
     selectedOrder,
   );
 
+   if(!data){
+    return;
+   }
+
   const nilaiSejati = hitungNilaiSejati(fungsi, x, selectedDerivative);
 
   tampilkanHasil(fungsi, x, h, data, nilaiSejati);
