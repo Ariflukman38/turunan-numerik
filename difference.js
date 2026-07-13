@@ -481,6 +481,26 @@ function hitungDifferenceMethod(fungsi, x, h, derivative, order) {
     return null;
   }
 
+   /* =====================================
+   VALIDASI CENTRAL DIFFERENCE
+   ===================================== */
+   
+   if (
+       selectedMethod === "central" &&
+       (
+           o === 1 ||
+           o === 3
+       )
+   ) {
+   
+       alert(
+           "Central Difference hanya mendukung Orde 2 dan Orde 4."
+       );
+   
+       return null;
+   
+   }
+
   if (isNaN(d) || d < 1 || d > 4) {
     alert("Turunan harus antara 1 sampai 4");
 
