@@ -541,6 +541,12 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("active");
 
       selectedMode = btn.dataset.mode;
+       const ordeContainer = document.getElementById("ordeContainer");
+      if (selectedMode === "table") {
+        ordeContainer.style.display = "none";
+      } else {
+        ordeContainer.style.display = "block";
+      }
 
       document.getElementById("fungsiMode").style.display =
         selectedMode === "fungsi" ? "block" : "none";
